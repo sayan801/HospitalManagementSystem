@@ -1,0 +1,1114 @@
+<Project>
+  <Name>HospitalManagementSystem</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>HmsDesign</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>AccessInfo</Name>
+        <Access>Public</Access>
+        <Location left="839" top="28" />
+        <Size width="354" height="213" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string Password</Member>
+        <Member type="Field">string UserId</Member>
+        <Member type="Field">bool IsRememberPassword</Member>
+        <Member type="Field">int UniqueId</Member>
+        <Member type="Field">string emailId</Member>
+        <Member type="Method">public void ValidateUserString(string userString)</Member>
+        <Member type="Method">public void AuthenticateUser(string username, string password)</Member>
+        <Member type="Method">public void RetrieveForgetPassword(string username, string password)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PersonalInfo</Name>
+        <Access>Public</Access>
+        <Location left="1009" top="276" />
+        <Size width="163" height="196" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string name</Member>
+        <Member type="Field">string address</Member>
+        <Member type="Field">string phoneNumber</Member>
+        <Member type="Field">string sex</Member>
+        <Member type="Field">string dob</Member>
+        <Member type="Field">string emergencyContact</Member>
+        <Member type="Method">public void AddPersonalInfo()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DepartmentalInfo</Name>
+        <Access>Public</Access>
+        <Location left="1009" top="516" />
+        <Size width="176" height="213" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string phoneNo</Member>
+        <Member type="Field">string wardAddress</Member>
+        <Member type="Field">string departmentName</Member>
+        <Member type="Field">string department</Member>
+        <Member type="Field">string departmentMemberId</Member>
+        <Member type="Field">string departmentEmailId</Member>
+        <Member type="Field">string emergencyDoctor</Member>
+        <Member type="Method">public void AddDepartmentInfo()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>HospitalEmployee</Name>
+        <Access>Public</Access>
+        <Location left="78" top="28" />
+        <Size width="239" height="196" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">DepartmentalInfo departmentDetails</Member>
+        <Member type="Field">PersonalInfo personalDetails</Member>
+        <Member type="Field">AccessInfo accessDetails</Member>
+        <Member type="Field">List&lt;Responsibility&gt; responsibilities</Member>
+        <Member type="Method">public void GetDetails()</Member>
+        <Member type="Method">public List&lt;Responsibility&gt; GetResponsibilities()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>HospitalAdmin</Name>
+        <Access>Public</Access>
+        <Location left="78" top="311" />
+        <Size width="209" height="213" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List&lt;HospitalInstruments&gt; assginedItems</Member>
+        <Member type="Field">DepartmentalInfo departmentDetails</Member>
+        <Member type="Field">PersonalInfo personalDetails</Member>
+        <Member type="Field">AccessInfo accessDetails</Member>
+        <Member type="Field">List&lt;Responsibility&gt; responsibilities</Member>
+        <Member type="Method">public void GetAssigningHistory()</Member>
+        <Member type="Method">public void GetDetails()</Member>
+        <Member type="Method">public void CheckAccessForItems()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Enum">
+        <Name>PatientTypeEnum</Name>
+        <Access>Public</Access>
+        <Location left="78" top="794" />
+        <Size width="209" height="117" />
+        <Collapsed>False</Collapsed>
+        <Value>OutPatient</Value>
+        <Value>InPatient</Value>
+        <Value>Emergency</Value>
+      </Entity>
+      <Entity type="Class">
+        <Name>HospitalController</Name>
+        <Access>Public</Access>
+        <Location left="814" top="320" />
+        <Size width="163" height="247" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List&lt;HospitalEmployee&gt; employees</Member>
+        <Member type="Field">List&lt;HospitalResources&gt; resources</Member>
+        <Member type="Field">List&lt;HospitalAdmin&gt; admins</Member>
+        <Member type="Field">List&lt;PatientInfo&gt; patients</Member>
+        <Member type="Field">List&lt;HospitalInstruments&gt; instruments</Member>
+        <Member type="Field">List&lt;BillingInfo&gt; billingItems</Member>
+        <Member type="Method">public void GetReport()</Member>
+        <Member type="Method">public void GetUsageMatrix()</Member>
+        <Member type="Method">public string GetPatient()</Member>
+        <Member type="Method">public void GetEmployee()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>HospitalResources</Name>
+        <Access>Public</Access>
+        <Location left="565" top="28" />
+        <Size width="177" height="196" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string itemName</Member>
+        <Member type="Field">int itemId</Member>
+        <Member type="Field">List&lt;string&gt; itemTags</Member>
+        <Member type="Field">int itemDescription</Member>
+        <Member type="Field">ResourceTypeEnum itemType</Member>
+        <Member type="Field">List&lt;string&gt; itemUsers</Member>
+        <Member type="Method">public void ItemGetUsage()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Enum">
+        <Name>ResourceTypeEnum</Name>
+        <Access>Public</Access>
+        <Location left="369" top="28" />
+        <Size width="163" height="197" />
+        <Collapsed>False</Collapsed>
+        <Value>Computer</Value>
+        <Value>Printer</Value>
+        <Value>Table</Value>
+        <Value>Chair</Value>
+        <Value>Bed</Value>
+        <Value>Almirah</Value>
+        <Value>ElectronicsItem</Value>
+        <Value>Scanner</Value>
+      </Entity>
+      <Entity type="Class">
+        <Name>PatientInfo</Name>
+        <Access>Public</Access>
+        <Location left="78" top="550" />
+        <Size width="209" height="196" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List&lt;MedicalInstruments&gt; assginedItems</Member>
+        <Member type="Field">DepartmentalInfo deptDetails</Member>
+        <Member type="Field">PersonalInfo personalDetails</Member>
+        <Member type="Field">AccessInfo accessDetails</Member>
+        <Member type="Method">public void GetAssigningHistory()</Member>
+        <Member type="Method">public void GetDetails()</Member>
+        <Member type="Method">public void CheckAccessForItems()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Enum">
+        <Name>PatientDomainEnum</Name>
+        <Access>Public</Access>
+        <Location left="453" top="596" />
+        <Size width="174" height="282" />
+        <Collapsed>False</Collapsed>
+        <Value>GeneralMedicine</Value>
+        <Value>Cardiology</Value>
+        <Value>ENT</Value>
+        <Value>Pedriatic</Value>
+        <Value>Gastroenterology</Value>
+        <Value>Neurology</Value>
+        <Value>Gynaecology</Value>
+        <Value>Nephrology</Value>
+        <Value>Oncology</Value>
+        <Value>Orthopaedics</Value>
+        <Value>Physiotherapy</Value>
+        <Value>Radiology</Value>
+        <Value>Urology</Value>
+      </Entity>
+      <Entity type="Enum">
+        <Name>MedicalInstruments</Name>
+        <Access>Public</Access>
+        <Location left="369" top="294" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>ECG_machine</Value>
+        <Value>USG_machine</Value>
+        <Value>X_RAY_machine</Value>
+        <Value>CT_SCANNER</Value>
+        <Value>OXYGEN_SETUP</Value>
+      </Entity>
+      <Entity type="Class">
+        <Name>HospitalInstruments</Name>
+        <Access>Public</Access>
+        <Location left="565" top="294" />
+        <Size width="177" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string itemName</Member>
+        <Member type="Field">int itemId</Member>
+        <Member type="Field">List&lt;string&gt; itemTags</Member>
+        <Member type="Field">int itemDescription</Member>
+        <Member type="Field">ResourceTypeEnum itemType</Member>
+        <Member type="Field">List&lt;string&gt; itemUsers</Member>
+        <Member type="Field">List&lt;PatientDomainEnum&gt; patientDomainList</Member>
+        <Member type="Method">public void ItemGetUsage()</Member>
+        <Member type="Method">public List&lt;PatientDomainEnum&gt; GetDomainList()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Enum">
+        <Name>EmployeeTypeEnum</Name>
+        <Access>Public</Access>
+        <Location left="78" top="967" />
+        <Size width="209" height="180" />
+        <Collapsed>False</Collapsed>
+        <Value>Doctor</Value>
+        <Value>Nurse</Value>
+        <Value>Surgeon</Value>
+        <Value>FrontDesk</Value>
+        <Value>LabAttendant</Value>
+        <Value>SalesPerson</Value>
+        <Value>AdminEmployees</Value>
+      </Entity>
+      <Entity type="Class">
+        <Name>ExpertiseInfo</Name>
+        <Access>Public</Access>
+        <Location left="957" top="777" />
+        <Size width="228" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int yearsOfExperience</Member>
+        <Member type="Field">string Qualifications</Member>
+        <Member type="Field">string RegistrationId</Member>
+        <Member type="Field">PatientDomainEnum expertiseDomain</Member>
+        <Member type="Method">public int GetExperience()</Member>
+        <Member type="Method">public string GetRegNumber()</Member>
+        <Member type="Method">public PatientDomainEnum GetExpertise()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Responsibility</Name>
+        <Access>Public</Access>
+        <Location left="667" top="596" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int description</Member>
+        <Member type="Field">int id</Member>
+        <Member type="Field">int relatedInstruments</Member>
+        <Member type="Field">int relatedResources</Member>
+        <Member type="Field">int relatedPatients</Member>
+        <Member type="Field">int releatedDoctor</Member>
+        <Member type="Method">public int GetStatus()</Member>
+        <Member type="Method">public string GetResponsible()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ReportInfo</Name>
+        <Access>Public</Access>
+        <Location left="373" top="928" />
+        <Size width="210" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List&lt;string&gt; reportValue</Member>
+        <Member type="Field">HospitalEmployee employeeReferrer</Member>
+        <Member type="Field">PatientInfo patient</Member>
+        <Member type="Method">public void GetReport()</Member>
+        <Member type="Method">public void Print()</Member>
+        <Member type="Method">public void Display()</Member>
+        <Member type="Method">public void GetApproval()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BillingInfo</Name>
+        <Access>Public</Access>
+        <Location left="640" top="928" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int billAmount</Member>
+        <Member type="Field">int billingId</Member>
+        <Member type="Field">Responsibility responsibilityName</Member>
+        <Member type="Field">string status</Member>
+        <Member type="Method">public void NewMethod()</Member>
+        <Member type="Method">public int GetAmount()</Member>
+        <Member type="Method">public string GetStatus()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>HMSDataModel-break-down</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>HospitalEmployee</Name>
+        <Access>Public</Access>
+        <Location left="743" top="859" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private DepartmentalInfo departmentDetails</Member>
+        <Member type="Field">private PersonalInfo personalDetails</Member>
+        <Member type="Field">private AccessInfo accessDetails</Member>
+        <Member type="Field">private List&lt;Responsibility&gt; responsibilities</Member>
+        <Member type="Constructor">public HospitalEmployee()</Member>
+        <Member type="Method">public Void GetDetails()</Member>
+        <Member type="Method">public List&lt;Responsibility&gt; GetResponsibilities()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ExpertiseInfo</Name>
+        <Access>Public</Access>
+        <Location left="436" top="929" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Int32 yearsOfExperience</Member>
+        <Member type="Field">private String Qualifications</Member>
+        <Member type="Field">private String RegistrationId</Member>
+        <Member type="Field">private PatientDomainEnum expertiseDomain</Member>
+        <Member type="Constructor">public ExpertiseInfo()</Member>
+        <Member type="Method">public Int32 GetExperience()</Member>
+        <Member type="Method">public String GetRegNumber()</Member>
+        <Member type="Method">public PatientDomainEnum GetExpertise()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AccessInfo</Name>
+        <Access>Public</Access>
+        <Location left="246" top="795" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String Password</Member>
+        <Member type="Field">private String UserId</Member>
+        <Member type="Field">private Boolean IsRememberPassword</Member>
+        <Member type="Field">private Int32 UniqueId</Member>
+        <Member type="Field">private String emailId</Member>
+        <Member type="Constructor">public AccessInfo()</Member>
+        <Member type="Method">public Void ValidateUserString(String userString)</Member>
+        <Member type="Method">public Void AuthenticateUser(String username, String password)</Member>
+        <Member type="Method">public Void RetrieveForgetPassword(String username, String password)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>HospitalController</Name>
+        <Access>Public</Access>
+        <Location left="63" top="1169" />
+        <Size width="162" height="264" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private List&lt;HospitalEmployee&gt; employees</Member>
+        <Member type="Field">private List&lt;HospitalResources&gt; resources</Member>
+        <Member type="Field">private List&lt;HospitalAdmin&gt; admins</Member>
+        <Member type="Field">private List&lt;PatientInfo&gt; patients</Member>
+        <Member type="Field">private List&lt;HospitalInstruments&gt; instruments</Member>
+        <Member type="Field">private List&lt;BillingInfo&gt; billingItems</Member>
+        <Member type="Constructor">public HospitalController()</Member>
+        <Member type="Method">public Void GetReport()</Member>
+        <Member type="Method">public Void GetUsageMatrix()</Member>
+        <Member type="Method">public String GetPatient()</Member>
+        <Member type="Method">public Void GetEmployee()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BillingInfo</Name>
+        <Access>Public</Access>
+        <Location left="12" top="827" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Int32 billAmount</Member>
+        <Member type="Field">private Int32 billingId</Member>
+        <Member type="Field">private Responsibility responsibilityName</Member>
+        <Member type="Field">private String status</Member>
+        <Member type="Constructor">public BillingInfo()</Member>
+        <Member type="Method">public Void NewMethod()</Member>
+        <Member type="Method">public Int32 GetAmount()</Member>
+        <Member type="Method">public String GetStatus()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>HospitalAdmin</Name>
+        <Access>Public</Access>
+        <Location left="709" top="296" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private List&lt;HospitalInstruments&gt; assginedItems</Member>
+        <Member type="Field">private DepartmentalInfo departmentDetails</Member>
+        <Member type="Field">private PersonalInfo personalDetails</Member>
+        <Member type="Field">private AccessInfo accessDetails</Member>
+        <Member type="Field">private List&lt;Responsibility&gt; responsibilities</Member>
+        <Member type="Constructor">public HospitalAdmin()</Member>
+        <Member type="Method">public Void GetAssigningHistory()</Member>
+        <Member type="Method">public Void GetDetails()</Member>
+        <Member type="Method">public Void CheckAccessForItems()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DepartmentalInfo</Name>
+        <Access>Public</Access>
+        <Location left="692" top="22" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String phoneNo</Member>
+        <Member type="Field">private String wardAddress</Member>
+        <Member type="Field">private String departmentName</Member>
+        <Member type="Field">private String department</Member>
+        <Member type="Field">private String departmentMemberId</Member>
+        <Member type="Field">private String departmentEmailId</Member>
+        <Member type="Field">private String emergencyDoctor</Member>
+        <Member type="Constructor">public DepartmentalInfo()</Member>
+        <Member type="Method">public Void AddDepartmentInfo()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>HospitalResources</Name>
+        <Access>Public</Access>
+        <Location left="436" top="344" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String itemName</Member>
+        <Member type="Field">private Int32 itemId</Member>
+        <Member type="Field">private List&lt;String&gt; itemTags</Member>
+        <Member type="Field">private Int32 itemDescription</Member>
+        <Member type="Field">private ResourceTypeEnum itemType</Member>
+        <Member type="Field">private List&lt;String&gt; itemUsers</Member>
+        <Member type="Constructor">public HospitalResources()</Member>
+        <Member type="Method">public Void ItemGetUsage()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ReportInfo</Name>
+        <Access>Public</Access>
+        <Location left="224" top="344" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private List&lt;String&gt; reportValue</Member>
+        <Member type="Field">private HospitalEmployee employeeReferrer</Member>
+        <Member type="Field">private PatientInfo patient</Member>
+        <Member type="Constructor">public ReportInfo()</Member>
+        <Member type="Method">public Void GetReport()</Member>
+        <Member type="Method">public Void Print()</Member>
+        <Member type="Method">public Void Display()</Member>
+        <Member type="Method">public Void GetApproval()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PersonalInfo</Name>
+        <Access>Public</Access>
+        <Location left="12" top="344" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String name</Member>
+        <Member type="Field">private String address</Member>
+        <Member type="Field">private String phoneNumber</Member>
+        <Member type="Field">private String sex</Member>
+        <Member type="Field">private String dob</Member>
+        <Member type="Field">private String emergencyContact</Member>
+        <Member type="Constructor">public PersonalInfo()</Member>
+        <Member type="Method">public Void AddPersonalInfo()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>HospitalInstruments</Name>
+        <Access>Public</Access>
+        <Location left="464" top="22" />
+        <Size width="162" height="247" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String itemName</Member>
+        <Member type="Field">private Int32 itemId</Member>
+        <Member type="Field">private List&lt;String&gt; itemTags</Member>
+        <Member type="Field">private Int32 itemDescription</Member>
+        <Member type="Field">private ResourceTypeEnum itemType</Member>
+        <Member type="Field">private List&lt;String&gt; itemUsers</Member>
+        <Member type="Field">private List&lt;PatientDomainEnum&gt; patientDomainList</Member>
+        <Member type="Constructor">public HospitalInstruments()</Member>
+        <Member type="Method">public Void ItemGetUsage()</Member>
+        <Member type="Method">public List&lt;PatientDomainEnum&gt; GetDomainList()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Enum">
+        <Name>ResourceTypeEnum</Name>
+        <Access>Public</Access>
+        <Location left="224" top="10" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>Computer = 0</Value>
+        <Value>Printer = 1</Value>
+        <Value>Table = 2</Value>
+        <Value>Chair = 3</Value>
+        <Value>Bed = 4</Value>
+        <Value>Almirah = 5</Value>
+        <Value>ElectronicsItem = 6</Value>
+        <Value>Scanner = 7</Value>
+      </Entity>
+      <Entity type="Enum">
+        <Name>PatientDomainEnum</Name>
+        <Access>Public</Access>
+        <Location left="26" top="10" />
+        <Size width="162" height="282" />
+        <Collapsed>False</Collapsed>
+        <Value>GeneralMedicine = 0</Value>
+        <Value>Cardiology = 1</Value>
+        <Value>ENT = 2</Value>
+        <Value>Pedriatic = 3</Value>
+        <Value>Gastroenterology = 4</Value>
+        <Value>Neurology = 5</Value>
+        <Value>Gynaecology = 6</Value>
+        <Value>Nephrology = 7</Value>
+        <Value>Oncology = 8</Value>
+        <Value>Orthopaedics = 9</Value>
+        <Value>Physiotherapy = 10</Value>
+        <Value>Radiology = 11</Value>
+        <Value>Urology = 12</Value>
+      </Entity>
+      <Entity type="Enum">
+        <Name>MedicalInstruments</Name>
+        <Access>Public</Access>
+        <Location left="555" top="1567" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>ECG_machine = 0</Value>
+        <Value>USG_machine = 1</Value>
+        <Value>X_RAY_machine = 2</Value>
+        <Value>CT_SCANNER = 3</Value>
+        <Value>OXYGEN_SETUP = 4</Value>
+      </Entity>
+      <Entity type="Enum">
+        <Name>EmployeeTypeEnum</Name>
+        <Access>Public</Access>
+        <Location left="550" top="1184" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>Doctor = 0</Value>
+        <Value>Nurse = 1</Value>
+        <Value>Surgeon = 2</Value>
+        <Value>FrontDesk = 3</Value>
+        <Value>LabAttendant = 4</Value>
+        <Value>SalesPerson = 5</Value>
+        <Value>AdminEmployees = 6</Value>
+      </Entity>
+      <Entity type="Enum">
+        <Name>PatientTypeEnum</Name>
+        <Access>Public</Access>
+        <Location left="295" top="1184" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>OutPatient = 0</Value>
+        <Value>InPatient = 1</Value>
+        <Value>Emergency = 2</Value>
+      </Entity>
+      <Entity type="Class">
+        <Name>PatientInfo</Name>
+        <Access>Public</Access>
+        <Location left="329" top="1553" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private List&lt;MedicalInstruments&gt; assginedItems</Member>
+        <Member type="Field">private DepartmentalInfo deptDetails</Member>
+        <Member type="Field">private PersonalInfo personalDetails</Member>
+        <Member type="Field">private AccessInfo accessDetails</Member>
+        <Member type="Constructor">public PatientInfo()</Member>
+        <Member type="Method">public Void GetAssigningHistory()</Member>
+        <Member type="Method">public Void GetDetails()</Member>
+        <Member type="Method">public Void CheckAccessForItems()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Responsibility</Name>
+        <Access>Public</Access>
+        <Location left="86" top="1567" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Int32 description</Member>
+        <Member type="Field">private Int32 id</Member>
+        <Member type="Field">private Int32 relatedInstruments</Member>
+        <Member type="Field">private Int32 relatedResources</Member>
+        <Member type="Field">private Int32 relatedPatients</Member>
+        <Member type="Field">private Int32 releatedDoctor</Member>
+        <Member type="Constructor">public Responsibility()</Member>
+        <Member type="Method">public Int32 GetStatus()</Member>
+        <Member type="Method">public String GetResponsible()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Association" first="0" second="9">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>personalDetails</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="0" second="2">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>accessDetails</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="1" second="12">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>expertiseDomain</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="5" second="6">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>departmentDetails</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="5" second="9">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>personalDetails</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="5" second="2">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>accessDetails</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="7" second="11">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>itemType</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="8" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>employeeReferrer</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="10" second="11">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>itemType</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>HMSDataModel.dll</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>PatientInfo</Name>
+        <Access>Public</Access>
+        <Location left="1072" top="624" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private List&lt;MedicalInstruments&gt; assginedItems</Member>
+        <Member type="Field">private DepartmentalInfo deptDetails</Member>
+        <Member type="Field">private PersonalInfo personalDetails</Member>
+        <Member type="Field">private AccessInfo accessDetails</Member>
+        <Member type="Constructor">public PatientInfo()</Member>
+        <Member type="Method">public Void GetAssigningHistory()</Member>
+        <Member type="Method">public Void GetDetails()</Member>
+        <Member type="Method">public Void CheckAccessForItems()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>HospitalEmployee</Name>
+        <Access>Public</Access>
+        <Location left="860" top="624" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private DepartmentalInfo departmentDetails</Member>
+        <Member type="Field">private PersonalInfo personalDetails</Member>
+        <Member type="Field">private AccessInfo accessDetails</Member>
+        <Member type="Field">private List&lt;Responsibility&gt; responsibilities</Member>
+        <Member type="Constructor">public HospitalEmployee()</Member>
+        <Member type="Method">public Void GetDetails()</Member>
+        <Member type="Method">public List&lt;Responsibility&gt; GetResponsibilities()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ExpertiseInfo</Name>
+        <Access>Public</Access>
+        <Location left="648" top="624" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Int32 yearsOfExperience</Member>
+        <Member type="Field">private String Qualifications</Member>
+        <Member type="Field">private String RegistrationId</Member>
+        <Member type="Field">private PatientDomainEnum expertiseDomain</Member>
+        <Member type="Constructor">public ExpertiseInfo()</Member>
+        <Member type="Method">public Int32 GetExperience()</Member>
+        <Member type="Method">public String GetRegNumber()</Member>
+        <Member type="Method">public PatientDomainEnum GetExpertise()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AccessInfo</Name>
+        <Access>Public</Access>
+        <Location left="436" top="624" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String Password</Member>
+        <Member type="Field">private String UserId</Member>
+        <Member type="Field">private Boolean IsRememberPassword</Member>
+        <Member type="Field">private Int32 UniqueId</Member>
+        <Member type="Field">private String emailId</Member>
+        <Member type="Constructor">public AccessInfo()</Member>
+        <Member type="Method">public Void ValidateUserString(String userString)</Member>
+        <Member type="Method">public Void AuthenticateUser(String username, String password)</Member>
+        <Member type="Method">public Void RetrieveForgetPassword(String username, String password)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>HospitalController</Name>
+        <Access>Public</Access>
+        <Location left="224" top="624" />
+        <Size width="162" height="264" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private List&lt;HospitalEmployee&gt; employees</Member>
+        <Member type="Field">private List&lt;HospitalResources&gt; resources</Member>
+        <Member type="Field">private List&lt;HospitalAdmin&gt; admins</Member>
+        <Member type="Field">private List&lt;PatientInfo&gt; patients</Member>
+        <Member type="Field">private List&lt;HospitalInstruments&gt; instruments</Member>
+        <Member type="Field">private List&lt;BillingInfo&gt; billingItems</Member>
+        <Member type="Constructor">public HospitalController()</Member>
+        <Member type="Method">public Void GetReport()</Member>
+        <Member type="Method">public Void GetUsageMatrix()</Member>
+        <Member type="Method">public String GetPatient()</Member>
+        <Member type="Method">public Void GetEmployee()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BillingInfo</Name>
+        <Access>Public</Access>
+        <Location left="12" top="624" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Int32 billAmount</Member>
+        <Member type="Field">private Int32 billingId</Member>
+        <Member type="Field">private Responsibility responsibilityName</Member>
+        <Member type="Field">private String status</Member>
+        <Member type="Constructor">public BillingInfo()</Member>
+        <Member type="Method">public Void NewMethod()</Member>
+        <Member type="Method">public Int32 GetAmount()</Member>
+        <Member type="Method">public String GetStatus()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Responsibility</Name>
+        <Access>Public</Access>
+        <Location left="1072" top="344" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Int32 description</Member>
+        <Member type="Field">private Int32 id</Member>
+        <Member type="Field">private Int32 relatedInstruments</Member>
+        <Member type="Field">private Int32 relatedResources</Member>
+        <Member type="Field">private Int32 relatedPatients</Member>
+        <Member type="Field">private Int32 releatedDoctor</Member>
+        <Member type="Constructor">public Responsibility()</Member>
+        <Member type="Method">public Int32 GetStatus()</Member>
+        <Member type="Method">public String GetResponsible()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>HospitalAdmin</Name>
+        <Access>Public</Access>
+        <Location left="860" top="344" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private List&lt;HospitalInstruments&gt; assginedItems</Member>
+        <Member type="Field">private DepartmentalInfo departmentDetails</Member>
+        <Member type="Field">private PersonalInfo personalDetails</Member>
+        <Member type="Field">private AccessInfo accessDetails</Member>
+        <Member type="Field">private List&lt;Responsibility&gt; responsibilities</Member>
+        <Member type="Constructor">public HospitalAdmin()</Member>
+        <Member type="Method">public Void GetAssigningHistory()</Member>
+        <Member type="Method">public Void GetDetails()</Member>
+        <Member type="Method">public Void CheckAccessForItems()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DepartmentalInfo</Name>
+        <Access>Public</Access>
+        <Location left="648" top="344" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String phoneNo</Member>
+        <Member type="Field">private String wardAddress</Member>
+        <Member type="Field">private String departmentName</Member>
+        <Member type="Field">private String department</Member>
+        <Member type="Field">private String departmentMemberId</Member>
+        <Member type="Field">private String departmentEmailId</Member>
+        <Member type="Field">private String emergencyDoctor</Member>
+        <Member type="Constructor">public DepartmentalInfo()</Member>
+        <Member type="Method">public Void AddDepartmentInfo()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>HospitalResources</Name>
+        <Access>Public</Access>
+        <Location left="436" top="344" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String itemName</Member>
+        <Member type="Field">private Int32 itemId</Member>
+        <Member type="Field">private List&lt;String&gt; itemTags</Member>
+        <Member type="Field">private Int32 itemDescription</Member>
+        <Member type="Field">private ResourceTypeEnum itemType</Member>
+        <Member type="Field">private List&lt;String&gt; itemUsers</Member>
+        <Member type="Constructor">public HospitalResources()</Member>
+        <Member type="Method">public Void ItemGetUsage()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ReportInfo</Name>
+        <Access>Public</Access>
+        <Location left="224" top="344" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private List&lt;String&gt; reportValue</Member>
+        <Member type="Field">private HospitalEmployee employeeReferrer</Member>
+        <Member type="Field">private PatientInfo patient</Member>
+        <Member type="Constructor">public ReportInfo()</Member>
+        <Member type="Method">public Void GetReport()</Member>
+        <Member type="Method">public Void Print()</Member>
+        <Member type="Method">public Void Display()</Member>
+        <Member type="Method">public Void GetApproval()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PersonalInfo</Name>
+        <Access>Public</Access>
+        <Location left="12" top="344" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String name</Member>
+        <Member type="Field">private String address</Member>
+        <Member type="Field">private String phoneNumber</Member>
+        <Member type="Field">private String sex</Member>
+        <Member type="Field">private String dob</Member>
+        <Member type="Field">private String emergencyContact</Member>
+        <Member type="Constructor">public PersonalInfo()</Member>
+        <Member type="Method">public Void AddPersonalInfo()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>HospitalInstruments</Name>
+        <Access>Public</Access>
+        <Location left="1072" top="12" />
+        <Size width="162" height="247" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String itemName</Member>
+        <Member type="Field">private Int32 itemId</Member>
+        <Member type="Field">private List&lt;String&gt; itemTags</Member>
+        <Member type="Field">private Int32 itemDescription</Member>
+        <Member type="Field">private ResourceTypeEnum itemType</Member>
+        <Member type="Field">private List&lt;String&gt; itemUsers</Member>
+        <Member type="Field">private List&lt;PatientDomainEnum&gt; patientDomainList</Member>
+        <Member type="Constructor">public HospitalInstruments()</Member>
+        <Member type="Method">public Void ItemGetUsage()</Member>
+        <Member type="Method">public List&lt;PatientDomainEnum&gt; GetDomainList()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Enum">
+        <Name>MedicalInstruments</Name>
+        <Access>Public</Access>
+        <Location left="860" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>ECG_machine = 0</Value>
+        <Value>USG_machine = 1</Value>
+        <Value>X_RAY_machine = 2</Value>
+        <Value>CT_SCANNER = 3</Value>
+        <Value>OXYGEN_SETUP = 4</Value>
+      </Entity>
+      <Entity type="Enum">
+        <Name>ResourceTypeEnum</Name>
+        <Access>Public</Access>
+        <Location left="648" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>Computer = 0</Value>
+        <Value>Printer = 1</Value>
+        <Value>Table = 2</Value>
+        <Value>Chair = 3</Value>
+        <Value>Bed = 4</Value>
+        <Value>Almirah = 5</Value>
+        <Value>ElectronicsItem = 6</Value>
+        <Value>Scanner = 7</Value>
+      </Entity>
+      <Entity type="Enum">
+        <Name>PatientDomainEnum</Name>
+        <Access>Public</Access>
+        <Location left="436" top="12" />
+        <Size width="162" height="282" />
+        <Collapsed>False</Collapsed>
+        <Value>GeneralMedicine = 0</Value>
+        <Value>Cardiology = 1</Value>
+        <Value>ENT = 2</Value>
+        <Value>Pedriatic = 3</Value>
+        <Value>Gastroenterology = 4</Value>
+        <Value>Neurology = 5</Value>
+        <Value>Gynaecology = 6</Value>
+        <Value>Nephrology = 7</Value>
+        <Value>Oncology = 8</Value>
+        <Value>Orthopaedics = 9</Value>
+        <Value>Physiotherapy = 10</Value>
+        <Value>Radiology = 11</Value>
+        <Value>Urology = 12</Value>
+      </Entity>
+      <Entity type="Enum">
+        <Name>EmployeeTypeEnum</Name>
+        <Access>Public</Access>
+        <Location left="224" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>Doctor = 0</Value>
+        <Value>Nurse = 1</Value>
+        <Value>Surgeon = 2</Value>
+        <Value>FrontDesk = 3</Value>
+        <Value>LabAttendant = 4</Value>
+        <Value>SalesPerson = 5</Value>
+        <Value>AdminEmployees = 6</Value>
+      </Entity>
+      <Entity type="Enum">
+        <Name>PatientTypeEnum</Name>
+        <Access>Public</Access>
+        <Location left="12" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>OutPatient = 0</Value>
+        <Value>InPatient = 1</Value>
+        <Value>Emergency = 2</Value>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Association" first="0" second="8">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>deptDetails</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="0" second="11">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>personalDetails</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="0" second="3">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>accessDetails</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="1" second="8">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>departmentDetails</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="1" second="11">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>personalDetails</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="1" second="3">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>accessDetails</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="2" second="15">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>expertiseDomain</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="5" second="6">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>responsibilityName</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="7" second="8">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>departmentDetails</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="7" second="11">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>personalDetails</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="7" second="3">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>accessDetails</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="9" second="14">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>itemType</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="10" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>employeeReferrer</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="10" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>patient</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="12" second="14">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>itemType</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>

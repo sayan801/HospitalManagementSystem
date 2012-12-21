@@ -1,0 +1,35 @@
+﻿<Window x:Class="HospitalManagementSystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Hospital Controller" Height="372" Width="1066">
+    <DockPanel>
+        <Expander IsExpanded="True" Background="Gray" Header="Login" Name="expander1" DockPanel.Dock="Left" Expanded="expander1_Expanded" Height="486" Width="476">
+            <UniformGrid Rows="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Label>Name</Label>
+                <TextBox Width="200" Height="40"></TextBox>
+                <Label>Password</Label>
+                <PasswordBox  Width="200" Height="40"></PasswordBox>
+                <UniformGrid Columns="1">
+                    <CheckBox>Remember Password</CheckBox>
+                    <Label Hyperlink.Click="Label_Click">Forgot Password</Label>
+                </UniformGrid>
+
+                <Button  Width="200" Height="40">Login</Button>
+                <Button Click="Button_Click_6">Print Report</Button>
+                <Button Click="Button_Click_7">Settings</Button>
+            </UniformGrid>
+        </Expander>
+        <Expander Header="Features Access" IsExpanded="True" DockPanel.Dock="Right">
+            <UniformGrid Columns="2">
+                <Button Click="Button_Click">Patients</Button>
+                <Button Click="Button_Click_5">Doctors</Button>
+                <Button Click="Button_Click_6">Billing</Button>
+                <Button Click="Button_Click_8">Employees</Button>
+                <Button Click="Button_Click_1">Resources</Button>
+                <Button Click="Button_Click_2">Instruments</Button>
+                <Button Click="Button_Click_3">Patient Registration</Button>
+                <Button Click="Button_Click_4">Video Surveilance</Button>
+            </UniformGrid>
+        </Expander>
+    </DockPanel>
+</Window>
