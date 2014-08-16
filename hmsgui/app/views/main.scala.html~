@@ -1,41 +1,77 @@
 @(title: String)(content: Html)
 
 <!DOCTYPE html>
-
-<html>
-    <head>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
         <title>@title</title>
-        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.min.css")">
+	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/font-awesome.min.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/style.css")">
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
-        <script src="@routes.Assets.at("javascripts/hello.js")" type="text/javascript"></script>
-        <script src="@routes.Assets.at("javascripts/bootstrap.min.js")" type="text/javascript"></script>
-    </head>
-    <body>
-<button type="button" class="btn btn-default btn-lg">
-  <span class="glyphicon glyphicon-star"></span> Star
-</button>
-<nav class="navbar navbar-default" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Brand</a>
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-          <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
+  </head>
+
+  <body>
+
+     <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">
+		<span class="fa-stack fa-lg">
+  			<i class="fa fa-circle fa-stack-2x" style="color: #A61D36;"></i>
+  			<i class="fa fa-medkit fa-stack-1x"></i>
+		</span>HMS
+	      </h3>
+              <h3><ul class="nav masthead-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul></h3>
             </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-          </form>
+          </div>
+
+          <div class="inner cover">
+            <h1 class="cover-heading">Hospital Management System</h1>
+            <p class="lead">Hospital management system will provide a software solution for managing Hospital more efficiently and effectively.It will enable Hospital administrator to implement an automatic Hospital management system by which a centralized system can keep track of activities happening in hospital.</p>
+            <p class="lead">
+              <a id="btnSignin" class="btn btn-lg btn-default">Sign in</a>
+            </p>
+          </div>
+	  <div style="display:none;" id="signIn" class="inner cover">
+	      <form class="form-signin" role="form">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <input type="email" class="form-control" placeholder="Email address" required autofocus>
+        <input type="password" class="form-control" placeholder="Password" required>
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+
+    </div> <!-- /container -->
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>All copyrights reserved by <a href="http://www.technicise.com">Technicise.com</a>.</p>
+            </div>
+          </div>
+
         </div>
+
       </div>
-    </nav>
-        @content
-    </body>
+
+    </div>
+    <script src="@routes.Assets.at("javascripts/jquery.min.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("javascripts/bootstrap.min.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("javascripts/hello.js")" type="text/javascript"></script>
+  </body>
 </html>
