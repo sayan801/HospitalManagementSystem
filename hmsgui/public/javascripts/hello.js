@@ -9,4 +9,7 @@ $( "#login" ).click(function() {
   $( "#signIn" ).hide("fast");
   $( "#menuItems" ).show("slow");
 });
-menuItems
+$('#doctorTab a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
