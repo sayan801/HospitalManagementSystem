@@ -32,18 +32,18 @@
 		</span>HMS
 	      </h3>
               <h3><ul class="nav masthead-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Features</a></li>
-                <li><a href="#">Contact</a></li>
+                <li class="active"><a href="#"><i class="fa fa-home fa-fw"></i>&nbsp; Home</a></li>
+                <li><a href="#"><i class="fa fa-hospital-o fa-fw"></i>&nbsp; Features</a></li>
+                <li><a href="#"><i class="fa fa-microphone fa-fw"></i>&nbsp; Contact</a></li>
               </ul></h3>
             </div>
           </div>
 
-          <div class="inner cover">
+          <div id="intro" class="inner cover">
             <h1 class="cover-heading">Hospital Management System</h1>
             <p class="lead">Hospital management system will provide a software solution for managing Hospital more efficiently and effectively.It will enable Hospital administrator to implement an automatic Hospital management system by which a centralized system can keep track of activities happening in hospital.</p>
             <p class="lead">
-              <a id="btnSignin" class="btn btn-lg btn-default">Sign in</a>
+              <a id="btnSignin" class="btn btn-lg btn-default">Sign in&nbsp; &nbsp; <i class="fa fa-sign-in"></i></a>
             </p>
           </div>
 	  <div style="display:none;" id="signIn" class="inner cover">

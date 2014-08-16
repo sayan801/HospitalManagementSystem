@@ -10,68 +10,142 @@
     <meta name="author" content="">
         <title>@title</title>
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.min.css")">
-	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/font-awesome.min.css")">
+		<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/font-awesome.min.css")">
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/style.css")">
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
   </head>
-
   <body>
-
-     <div class="site-wrapper">
-
-      <div class="site-wrapper-inner">
-
-        <div class="cover-container">
-
-          <div class="masthead clearfix">
-            <div class="inner">
-              <h3 class="masthead-brand">
-		<span class="fa-stack fa-lg">
-  			<i class="fa fa-circle fa-stack-2x" style="color: #A61D36;"></i>
-  			<i class="fa fa-medkit fa-stack-1x"></i>
-		</span>HMS
-	      </h3>
-              <h3><ul class="nav masthead-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Features</a></li>
-                <li><a href="#">Contact</a></li>
-              </ul></h3>
-            </div>
-          </div>
-
-          <div id="intro" class="inner cover">
-            <h1 class="cover-heading">Hospital Management System</h1>
-            <p class="lead">Hospital management system will provide a software solution for managing Hospital more efficiently and effectively.It will enable Hospital administrator to implement an automatic Hospital management system by which a centralized system can keep track of activities happening in hospital.</p>
-            <p class="lead">
-              <a id="btnSignin" class="btn btn-lg btn-default">Sign in</a>
-            </p>
-          </div>
-	  <div style="display:none;" id="signIn" class="inner cover">
-	      <form class="form-signin" role="form">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="email" class="form-control" placeholder="Email address" required autofocus>
-        <input type="password" class="form-control" placeholder="Password" required>
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      </form>
-
-    </div> <!-- /container -->
-
-          <div class="mastfoot">
-            <div class="inner">
-              <p>All copyrights reserved by <a href="http://www.technicise.com">Technicise.com</a>.</p>
-            </div>
-          </div>
-
-        </div>
-
+   <div class="site-wrapper">
+    <div class="site-wrapper-inner">
+     <div class="cover-container">
+      <div class="masthead clearfix">
+       <div class="inner">
+        <h3 class="masthead-brand">
+         <span class="fa-stack fa-lg">
+  		  <i class="fa fa-circle fa-stack-2x" style="color: #A61D36;"></i>
+  		  <i class="fa fa-medkit fa-stack-1x"></i>
+		 </span>HMS
+	    </h3>
+        <h4>
+		 <ul class="nav masthead-nav">
+          <li class="active">
+			  <a href="#">
+			   <span class="fa-stack">
+				<i class="fa fa-square-o fa-stack-2x"></i>
+				<i class="fa fa-home fa-fw fa-stack-1x"></i>
+			   </span>&nbsp; Home
+			  </a>
+		  </li>
+		  <li>
+			  <a href="#">
+			   <span class="fa-stack">
+				<i class="fa fa-square-o fa-stack-2x"></i>
+				<i class="fa fa-hospital-o fa-fw fa-stack-1x"></i>
+			   </span>&nbsp; Features
+			  </a>
+		  </li>
+		  <li>
+			  <a href="#">
+			   <span class="fa-stack">
+				<i class="fa fa-square-o fa-stack-2x"></i>
+				<i class="fa fa-microphone fa-fw fa-stack-1x"></i>
+			   </span>&nbsp; Contact
+			  </a>
+		  </li>
+         </ul>
+        </h4>
+       </div>
       </div>
-
+      <div id="intro" class="inner cover">
+       <h1 class="cover-heading">Hospital Management System</h1>
+       <p class="lead">Hospital management system will provide a software solution for managing Hospital more efficiently and effectively.It will enable Hospital administrator to implement an automatic Hospital management system by which a centralized system can keep track of activities happening in hospital.</p>
+       <p class="lead">
+        <a id="btnSignin" class="btn btn-lg btn-default">Sign in&nbsp; &nbsp; <i class="fa fa-sign-in"></i></a>
+       </p>
+      </div>
+	  <div style="display:none;" id="signIn" class="inner cover">
+	    <form class="form-signin" role="form">
+         <h2 class="form-signin-heading">Please sign in</h2>
+         <input type="email" class="form-control" placeholder="Email address" required autofocus>
+         <input type="password" class="form-control" placeholder="Password" required>
+         <label class="checkbox">
+          <input type="checkbox" value="remember-me"> Remember me
+         </label>
+         <button id="login" class="btn btn-lg btn-primary btn-block">Sign in</button>
+        </form>
+      </div> <!-- /container -->
+      <div id="menuItems" class="menu-items"  style="display:none;">
+		  <p style="padding-bottom:10px;">
+			  <a class="btn btn-lg btn-primary" href="#">
+				<span class="fa-stack fa-2x">
+					<i class="fa fa-square-o fa-stack-2x"></i>
+					<i class="fa fa-user-md fa-stack-1x"></i>
+				</span>Doctors&nbsp;&nbsp;
+			  </a>&nbsp;&nbsp;&nbsp;
+			  <a class="btn btn-lg btn-success" href="#">
+				<span class="fa-stack fa-2x">
+					<i class="fa fa-square-o fa-stack-2x"></i>
+					<i class="fa fa-wheelchair fa-stack-1x"></i>
+				</span>Patients&nbsp;&nbsp;&nbsp;
+			  </a>&nbsp;&nbsp;&nbsp;
+		      <a class="btn btn-lg btn-warning" href="#">
+				<span class="fa-stack fa-2x">
+					<i class="fa fa-square-o fa-stack-2x"></i>
+					<i class="fa fa-users fa-stack-1x"></i>
+				</span>Employees
+			  </a>
+		  </p>
+		  <p style="padding-bottom:10px;">
+			  <a class="btn btn-lg btn-danger" href="#">
+				<span class="fa-stack fa-2x">
+					<i class="fa fa-square-o fa-stack-2x"></i>
+					<i class="fa fa-money fa-stack-1x"></i>
+				</span>Billing&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			  </a>&nbsp;&nbsp;&nbsp;
+			  <a class="btn btn-lg btn-info" href="#">
+				<span class="fa-stack fa-2x">
+					<i class="fa fa-square-o fa-stack-2x"></i>
+					<i class="fa fa-recycle fa-stack-1x"></i>
+				</span>Resource
+			  </a>&nbsp;&nbsp;&nbsp;
+		      <a class="btn btn-lg btn-primary" href="#">
+				<span class="fa-stack fa-2x">
+					<i class="fa fa-square-o fa-stack-2x"></i>
+					<i class="fa fa-stethoscope fa-stack-1x"></i>
+				</span>Instruments
+			  </a>
+		  </p>
+		  <p>
+			  <a class="btn btn-lg btn-info" href="#">
+				<span class="fa-stack fa-2x">
+					<i class="fa fa-square-o fa-stack-2x"></i>
+					<i class="fa fa-gears fa-stack-1x"></i>
+				</span>Settings&nbsp;&nbsp;
+			  </a>&nbsp;&nbsp;&nbsp;
+			  <a class="btn btn-lg btn-warning" href="#">
+				<span class="fa-stack fa-2x">
+					<i class="fa fa-square-o fa-stack-2x"></i>
+					<i class="fa fa-print fa-stack-1x"></i>
+				</span>Print&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			  </a>&nbsp;&nbsp;&nbsp;
+		      <a class="btn btn-lg btn-danger" href="#">
+				<span class="fa-stack fa-2x">
+					<i class="fa fa-square-o fa-stack-2x"></i>
+					<i class="fa fa-pencil-square-o fa-stack-1x"></i>
+				</span>Registration
+			  </a>
+		  </p>		  
+	  </div>
+      <div class="mastfoot">
+       <div class="inner">
+        <p>All copyrights reserved by <a href="http://www.technicise.com">Technicise.com</a>.</p>
+       </div>
+      </div>
+     </div>
     </div>
-    <script src="@routes.Assets.at("javascripts/jquery.min.js")" type="text/javascript"></script>
-    <script src="@routes.Assets.at("javascripts/bootstrap.min.js")" type="text/javascript"></script>
-    <script src="@routes.Assets.at("javascripts/hello.js")" type="text/javascript"></script>
+   </div>
+   <script src="@routes.Assets.at("javascripts/jquery.min.js")" type="text/javascript"></script>
+   <script src="@routes.Assets.at("javascripts/bootstrap.min.js")" type="text/javascript"></script>
+   <script src="@routes.Assets.at("javascripts/hello.js")" type="text/javascript"></script>
   </body>
 </html>

@@ -5,3 +5,8 @@ $( "#btnSignin" ).click(function() {
   $( "#intro" ).hide("fast");
   $( "#signIn" ).show("slow");
 });
+$( "#login" ).click(function() {
+  $( "#signIn" ).hide("fast");
+  $( "#menuItems" ).show("slow");
+});
+menuItems
