@@ -3,11 +3,6 @@
  */
 
 /* Links */
-a,
-a:focus,
-a:hover {
-  color: #fff;
-}
 
 /* Custom default button */
 .btn-default,
@@ -32,7 +27,6 @@ body {
 body {
   color: #fff;
   text-align: center;
-  text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -201,4 +195,32 @@ body {
   margin: 0 auto;
   margin-top: 30px;
 }
-.modal{color:black;}
+.modal{
+	color:gray;
+	font-size:12px;
+}
+.height {
+    min-height: 200px;
+}
+
+.icon {
+    font-size: 47px;
+    color: #5CB85C;
+}
+
+.iconbig {
+    font-size: 77px;
+    color: #5CB85C;
+}
+
+.table > tbody > tr > .emptyrow {
+    border-top: none;
+}
+
+.table > thead > tr > .emptyrow {
+    border-bottom: none;
+}
+
+.table > tbody > tr > .highrow {
+    border-top: 3px solid;
+}
