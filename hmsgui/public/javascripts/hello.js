@@ -13,3 +13,12 @@ $('#doctorTab a').click(function (e) {
   e.preventDefault()
   $(this).tab('show')
 })
+$('#patientTab a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+$('#employeeTab a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+
