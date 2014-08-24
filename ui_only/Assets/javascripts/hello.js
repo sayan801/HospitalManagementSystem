@@ -6,6 +6,7 @@ $( "#btnSignin" ).click(function() {
   $( "#signIn" ).show("slow");
 });
 $( "#login" ).click(function() {
+  alert("Wrong user name or password");
   $( "#signIn" ).hide("fast");
   $( "#menuItems" ).show("slow");
 });
